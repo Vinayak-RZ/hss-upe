@@ -35,8 +35,8 @@ Captions on the poster name what each image shows. Place-matched Wikimedia repla
 | --- | --- | --- |
 | `pexels_water_truck_mumbai.jpg` | Hero left | Water tanker on an Indian city street (Pexels) |
 | `pexels_kolkata_flood.jpg` | Hero right | Monsoon flooding on an Indian city street (Pexels) |
-| `pexels_scooter_rain.jpg` | Bengaluru case | Flooded street in heavy rain (Pexels; illustrative, not Bengaluru-labelled) |
+| `pexels_kolkata_taxi.jpg` | Bengaluru case | Flooded street with traffic (Pexels; illustrative, not Bengaluru-labelled) |
 | `pexels_flood_rickshaw.jpg` | Delhi case | Flooded street with rickshaws (Pexels; illustrative) |
-| `zhengzhou_flood2.jpg` | Zhengzhou case | Zhengzhou street flooding, July 2021 Henan floods |
+| `zhengzhou_street.jpg` | Zhengzhou case | Zhengzhou street after the July 2021 floods |
 
 Do not treat this repo as a rights-cleared media pack for commercial reuse without checking each file’s source.
