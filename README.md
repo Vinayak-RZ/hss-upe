@@ -1,8 +1,8 @@
 # Towards Water-Sensitive Cities
 
-Academic poster for **HSS / UPE**: *Towards Water-Sensitive Cities in the Age of the Anthropocene*.
+Academic poster for **HSS / UPE**: *Towards Water-Sensitive Cities*.
 
-The poster argues that urban drought and flood are one political-ecological problem. It reads Delhi, Bengaluru and Zhengzhou through three registers, technocratic, bureaucratic and political ecology, and asks who decides, who is protected and who carries the risk.
+The poster argues that urban drought and flood are one political-ecological problem. Delhi's June 2024 crisis is the thesis: one water system made both drought and flood, and decided who paid. Bengaluru, Delhi and Zhengzhou are read through three registers — technocratic, bureaucratic and political ecology — asking who decides, who is protected and who carries the risk.
 
 ## Poster
 
@@ -27,6 +27,16 @@ The poster argues that urban drought and flood are one political-ecological prob
 - **Delhi** — imported water, June 2024 drought and flood in the same month
 - **Zhengzhou** — sponge-city design under extreme rainfall (July 2021)
 
-## Licence note
+## Photo credits
 
-Photos in `poster-assets/` are from Pexels / Wikimedia-style free sources used for coursework. Do not treat this repo as a rights-cleared media pack for commercial reuse without checking each file’s source.
+Captions on the poster name what each image shows. Place-matched Wikimedia replacements were attempted; Commons rate-limits blocked downloads, so the working set stays on free stock with honest captions (not city-labelled as documentary proof).
+
+| File | Role on poster | Note |
+| --- | --- | --- |
+| `pexels_water_truck_mumbai.jpg` | Hero left | Water tanker on an Indian city street (Pexels) |
+| `pexels_kolkata_flood.jpg` | Hero right | Monsoon flooding on an Indian city street (Pexels) |
+| `pexels_scooter_rain.jpg` | Bengaluru case | Flooded street in heavy rain (Pexels; illustrative, not Bengaluru-labelled) |
+| `pexels_flood_rickshaw.jpg` | Delhi case | Flooded street with rickshaws (Pexels; illustrative) |
+| `zhengzhou_flood2.jpg` | Zhengzhou case | Zhengzhou street flooding, July 2021 Henan floods |
+
+Do not treat this repo as a rights-cleared media pack for commercial reuse without checking each file’s source.
