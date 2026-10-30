@@ -1,0 +1,49 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Publish only the site files, not the whole repo.
+      - name: Assemble site
+        run: |
+          mkdir -p _site/poster-assets
+          cp index.html .nojekyll _site/
+          cp Water-Sensitive-Cities-Poster-v8.html \
+             Water-Sensitive-Cities-Poster-v8.pdf \
+             Water-Sensitive-Cities-Poster-v8-preview.png \
+             Water-Sensitive-Cities-Presentation-Script-v4.pdf _site/
+          cp poster-assets/bengaluru_tanker_refill_2024.jpg \
+             poster-assets/bengaluru_tatanagar_flood_2024.jpg \
+             poster-assets/bengaluru_bellandur_lake_2018.jpg _site/poster-assets/
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
