@@ -3,111 +3,120 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Towards Water-Sensitive Cities</title>
+<title>Towards Water-Sensitive Cities in the Age of the Anthropocene</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
 <style>
 :root{
   --blue:#0A5BE0; --ink:#111827; --ink2:#374151; --muted:#4B5563;
-  --panel:#EEF2F7; --line:#D8DEE7; --navy:#0B1B2E; --bg:#FBFCFD;
+  --panel:#EEF2F7; --card:#F6F8FB; --line:#D8DEE7; --navy:#0B1B2E;
   --disp:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
   --body:'Inter','Helvetica Neue',Arial,sans-serif;
-  --m:20px; --g:16px; --ph:18px;
-  --radius:4px;
-  --t-title:66px; --t-thesis:26px; --t-sec:25px; --t-city:26px;
-  --t-reg:20px; --t-body:12.5px; --t-cap:11px;
-  --col1:20px; --col2:541px; --col3:1062px; --colw:505px;
+  --m:20px; --g:16px; --ph:20px;
+  --radius:6px;
+  --shadow:0 1px 2px rgba(11,27,46,.05), 0 8px 18px rgba(11,27,46,.07);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:#d9dee5}
 body{font-family:var(--body);color:var(--ink);-webkit-font-smoothing:antialiased}
 .wrap{width:100vw;min-height:100vh;display:flex;justify-content:center;align-items:flex-start;padding:24px 0}
-.poster{width:1587px;height:1123px;background:var(--bg);position:relative;overflow:hidden;transform-origin:top center;box-shadow:0 10px 40px rgba(0,0,0,.18)}
+.poster{width:1587px;height:1123px;background:#FBFCFD;position:relative;overflow:hidden;transform-origin:top center;box-shadow:0 10px 40px rgba(0,0,0,.18)}
 .abs{position:absolute}
 h1,h2,h3,.disp{font-family:var(--disp);font-weight:700;letter-spacing:.005em}
+.ico{display:block;flex:none}
+
+/* flat icon wells (Canva/Figma, not organic blobs) */
+.well{flex:none;display:grid;place-items:center;background:#DCE8FB;border-radius:50%;width:42px;height:42px}
+.well .ico{width:24px;height:24px}
+.well.sq{border-radius:8px}
+.well.teal{background:#D7F1EB}
 
 /* ---------- row 1 ---------- */
-.tb{left:var(--col1);top:20px;width:var(--colw);height:332px;display:flex;flex-direction:column}
-.title{margin-top:0;color:var(--navy);font-size:var(--t-title);line-height:76px;text-transform:uppercase;font-weight:800;letter-spacing:-.005em}
-.title .ln{display:block;white-space:nowrap;height:76px;line-height:76px;overflow:hidden}
-.thesis{margin-top:6px;font-family:var(--disp);font-size:var(--t-thesis);line-height:1.15;font-weight:600;letter-spacing:.005em;color:var(--blue)}
-.intro{margin-top:auto;font-size:14px;line-height:1.35;color:var(--ink2)}
+.tb{left:var(--m);top:20px;width:518px;height:318px;display:flex;flex-direction:column}
+.title{margin-top:2px;color:var(--navy);font-size:72px;line-height:.88;text-transform:uppercase;font-weight:800;letter-spacing:-.005em}
+.title .ln{display:block;white-space:nowrap}
+.subt{margin-top:10px;white-space:nowrap;overflow:hidden;font-family:var(--disp);font-size:26px;line-height:28px;font-weight:600;letter-spacing:.01em;color:var(--blue)}
+.intro{margin-top:14px;font-size:13.5px;line-height:1.4;color:var(--ink2)}
+.intro b{color:var(--navy);font-weight:700}
 
-.hero{left:var(--col2);top:20px;width:var(--colw);height:332px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.hero .shot{display:flex;flex-direction:column;min-height:0}
-.hero .shot .frame{flex:1;border-radius:var(--radius);overflow:hidden;background:#C5D0DE}
+.hero{left:554px;top:20px;width:656px;height:318px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hero .shot{position:relative;border-radius:var(--radius);overflow:hidden;background:#C5D0DE;border:3px solid #fff;box-shadow:0 0 0 1px #D8DEE7, var(--shadow)}
 .hero .shot img{width:100%;height:100%;object-fit:cover;display:block}
-.hero .shot .cap{flex:none;margin-top:6px;font-size:var(--t-cap);line-height:1.3;color:var(--ink2)}
+.hero .sticker{position:absolute;left:12px;top:12px;background:#fff;border:1.5px solid #E5EAF1;border-radius:4px;padding:6px 10px;box-shadow:0 1px 0 rgba(15,23,42,.06)}
+.hero .shot:last-of-type .sticker{left:auto;right:12px}
+.hero .sticker b{display:block;font-family:var(--disp);font-size:16px;line-height:1;color:var(--blue)}
+.hero .sticker span{display:block;margin-top:3px;font-size:11.5px;line-height:1.25;color:var(--ink2);font-weight:500;max-width:150px}
 
-.wsc{left:var(--col3);top:20px;width:var(--colw);height:332px;background:var(--panel);border-radius:var(--radius);padding:20px var(--ph);display:flex;flex-direction:column}
+.wsc{left:1226px;top:20px;width:341px;height:318px;background:var(--panel);border:1px solid #E3E8EF;border-radius:var(--radius);padding:18px var(--ph);display:flex;flex-direction:column;box-shadow:var(--shadow)}
 .wsc h2{font-size:23px;line-height:1.15;color:var(--navy)}
-.wsc .def{margin-top:14px;font-size:15px;line-height:1.4;color:var(--ink2)}
-.wsc .arg{margin-top:14px;font-size:13px;line-height:1.4;font-weight:600;color:var(--navy)}
+.wsc>p{font-size:13px;line-height:1.4;color:var(--ink2);margin-top:8px}
+.wsc .stages{display:grid;grid-template-columns:1fr 1fr;gap:10px 8px;margin-top:14px}
+.wsc .stages>div{display:flex;align-items:center;gap:8px;font-size:11.5px;line-height:1.25;font-weight:600;color:var(--navy)}
+.wsc .arg{margin-top:auto;background:#fff;border-radius:var(--radius);padding:9px 11px;font-size:12px;line-height:1.35;font-weight:600;color:var(--navy)}
 
-/* ---------- row 2: registers + hub ---------- */
-.forces{left:var(--m);top:354px;width:1547px;height:132px;background:var(--panel);border-radius:var(--radius);padding:10px 24px;display:grid;grid-template-columns:260px 1fr;column-gap:16px;align-items:center;overflow:hidden}
-.forces-copy{min-width:0}
-.forces h2{font-size:var(--t-reg);line-height:1.1;color:var(--navy)}
-.forces .lead{margin-top:6px;font-size:var(--t-body);line-height:1.3;color:var(--ink2)}
-.fzrow{position:relative;height:110px}
-.fzrow .rail{position:absolute;left:90px;right:90px;top:14px;height:3px;background:#B7C4D6;border-radius:2px;z-index:0}
-.fz{position:absolute;top:0;width:200px;text-align:center;box-sizing:border-box;z-index:1}
-.fz-tech{left:20px}
-.fz-bur{left:58%}
-.fz-pol{right:10px}
-.fz b{display:inline-block;font-family:var(--disp);font-size:var(--t-reg);line-height:1.1;font-weight:700;letter-spacing:.01em;padding:0 8px;color:var(--navy);background:var(--panel);position:relative;z-index:1}
-.fz span{display:block;font-size:var(--t-body);line-height:1.3;color:var(--ink2);margin-top:8px}
-.core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:116px;height:116px;border-radius:50%;background:var(--blue);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:5px solid #D5E2F4;box-shadow:0 0 0 3px var(--panel);padding:0 10px 8px;z-index:5;pointer-events:none}
-.core .core-ico{width:40px;height:40px;margin-top:-6px}
-.core b{font-family:var(--disp);font-size:16px;line-height:1.05;font-weight:700;margin-top:2px}
+/* ---------- row 2: three registers ---------- */
+.forces{left:var(--m);top:348px;width:1547px;height:182px;background:var(--panel);border:1px solid #E3E8EF;border-radius:var(--radius);padding:12px 22px 10px;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.forces-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex:none}
+.forces h2{font-size:26px;line-height:1;color:var(--navy)}
+.forces .lead{font-size:14px;line-height:1.3;font-weight:600;color:var(--navy);text-align:right;max-width:520px}
+.pillars{flex:1;display:grid;grid-template-columns:1fr 1fr 1fr;margin-top:10px;min-height:0}
+.pillar{padding:6px 18px 0;border-top:2px solid var(--navy);min-width:0}
+.pillar:first-child{padding-left:0}
+.pillar:last-child{padding-right:0}
+.pillar + .pillar{border-left:1px solid #D3DCE6}
+.pillar h3{font-size:22px;line-height:1;color:var(--navy)}
+.pillar .def{margin-top:4px;font-size:12.5px;line-height:1.3;color:var(--ink2)}
+.pillar ul{margin-top:4px;padding:0;list-style:none;font-size:12.5px;line-height:1.3;color:var(--ink)}
+.pillar li{margin-top:3px;padding-left:11px;position:relative}
+.pillar li:before{content:"";position:absolute;left:0;top:.55em;width:5px;height:1.5px;background:var(--blue)}
 
 /* ---------- row 3: cases ---------- */
-.sec{left:var(--m);top:502px;font-size:var(--t-sec);line-height:1.1;letter-spacing:.005em;color:var(--navy);display:flex;align-items:center;gap:12px}
+.sec{left:var(--m);top:540px;font-size:25px;line-height:24px;letter-spacing:.005em;color:var(--navy);display:flex;align-items:center;gap:12px}
 .sec:after{content:"";width:48px;height:2px;background:var(--blue);opacity:.45}
-.case{top:534px;width:var(--colw);height:388px;background:var(--panel);border-radius:var(--radius);padding:10px var(--ph);display:flex;flex-direction:column;overflow:hidden}
-.case .hd{display:flex;align-items:baseline;gap:10px;flex:none}
-.case h3{font-size:var(--t-city);line-height:1.15;color:var(--navy)}
-.case .tag{font-size:var(--t-body);line-height:1.25;font-weight:500;color:var(--blue)}
-.case .region{margin-left:auto;font-size:var(--t-cap);font-weight:600;color:var(--ink2)}
-.case .ph{margin-top:6px;flex:none}
-.case .ph .frame{width:100%;height:105px;border-radius:var(--radius);overflow:hidden;background:#C5D0DE}
-.case .ph .frame img{width:100%;height:100%;object-fit:cover;display:block}
-.case .ph .cap{margin-top:4px;font-size:var(--t-cap);line-height:1.3;color:var(--ink2)}
-.case .kpis{margin-top:6px;flex:none;display:grid;grid-template-columns:1fr 1fr;gap:6px 12px}
-.case .kpis .kpi{min-width:0}
-.case .kpis .kl{font-size:var(--t-cap);font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--blue)}
-.case .kpis .kv{margin-top:2px;font-family:var(--disp);font-size:15px;line-height:1.15;font-weight:700;color:var(--navy)}
-.case .kpis .kv.death{font-size:17px;color:var(--navy)}
-.cols{flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:8px;align-content:start}
-.cols>div{padding:0 10px;border-left:1px solid var(--line)}
-.cols>div:first-child{padding-left:0;border-left:none}
-.cols>div:last-child{padding-right:0}
-.cols h4{display:block;font-size:11.5px;line-height:1.2;font-weight:700;color:var(--navy)}
-.cols ul{margin:4px 0 0 0;padding:0;list-style:none;font-size:var(--t-body);line-height:1.3;color:var(--ink2)}
-.cols li{margin-bottom:3px;padding-left:10px;position:relative}
-.cols li:before{content:"";position:absolute;left:0;top:5px;width:4px;height:4px;border-radius:50%;background:#B9C6D8}
-.reading{margin-top:auto;padding-top:6px;border-top:1px solid var(--line);font-size:12px;line-height:1.3;color:var(--navy);font-weight:500}
-.reading b{font-weight:700}
+.case{top:566px;width:505px;height:300px;background:#fff;border:1px solid #E3E8EF;border-radius:var(--radius);padding:10px 16px 12px;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.case .hd{display:flex;align-items:center;gap:12px;height:42px;flex:none}
+.case .hd>div:first-child{flex:1;min-width:0}
+.case h3{white-space:nowrap;font-size:26px;line-height:1;color:var(--navy)}
+.case .tag{font-size:12.5px;line-height:1.2;font-weight:500;color:var(--blue);margin-top:3px}
+.case .loc{flex:none;display:flex;align-items:center;gap:4px;background:#fff;border:1px solid #E5EAF1;border-radius:var(--radius);padding:5px 10px 5px 6px;font-size:11px;font-weight:600;color:var(--ink2)}
+.case .loc .pin{width:14px;height:14px}
+.case .body{display:flex;gap:14px;margin-top:8px;height:112px;flex:none}
+.case .frame{flex:none;width:200px;height:112px;border-radius:var(--radius);overflow:hidden;border:3px solid #fff;box-shadow:0 0 0 1px #D8DEE7, 0 4px 12px rgba(11,27,46,.08);background:#C5D0DE}
+.case .frame img{width:100%;height:100%;object-fit:cover;display:block}
+.case .stat{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.case .num{font-family:var(--disp);font-weight:800;font-size:36px;line-height:.9;color:var(--navy);letter-spacing:-.02em}
+.case .num small{font-size:18px;font-weight:700;color:var(--blue);margin-left:3px}
+.case .num i{font-style:normal;font-size:20px;font-weight:700;color:var(--blue);margin-left:2px}
+.case .cap{margin-top:3px;font-size:12.5px;line-height:1.25;font-weight:600;color:var(--ink2)}
+.case .sub{margin-top:6px;font-family:var(--disp);font-weight:700;font-size:16px;line-height:1.15;color:var(--navy)}
+.case .sub span{font-family:var(--body);font-weight:500;font-size:12px;color:var(--ink2);margin-left:4px}
+.case .cols{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;align-content:start}
+.case .cols h4{font-size:13px;line-height:1.2;font-weight:700;color:var(--navy)}
+.case .cols ul{margin:4px 0 0;padding:0;list-style:none;font-size:12px;line-height:1.35;color:var(--ink2)}
+.case .cols li{margin-top:3px;padding-left:10px;position:relative}
+.case .cols li:before{content:"";position:absolute;left:0;top:6px;width:4px;height:4px;border-radius:50%;background:#B9C6D8}
 
-/* ---------- row 4 ---------- */
-.band{top:938px;height:185px}
-.cmp{left:0;width:1054px;color:#fff;padding:16px 24px 16px var(--m);background:var(--navy);display:flex;flex-direction:column;justify-content:center}
-.cmp h2{font-size:22px;line-height:1.1;flex:none}
-.cmp table{border-collapse:collapse;width:100%;table-layout:fixed;margin-top:10px;font-size:var(--t-body);line-height:1.3;flex:none}
-.cmp th,.cmp td{border:1px solid #3E5578;padding:6px 8px;text-align:left;font-weight:400;vertical-align:top}
-.cmp th{font-weight:600}
-.cmp td:first-child,.cmp th:first-child{font-weight:600;width:90px}
-.cmp th.risk,.cmp td.risk{font-weight:700;background:rgba(10,91,224,.22)}
-.commit{left:1054px;width:533px;color:#fff;padding:16px 24px;background:var(--blue);display:flex;flex-direction:column;justify-content:center}
-.commit h2{font-size:20px;line-height:1.15}
-.commit ol{list-style:none;margin-top:12px}
-.commit li{display:flex;gap:12px;align-items:flex-start;font-size:13px;line-height:1.35;font-weight:600;margin-bottom:8px}
-.commit li .n{flex:none;font-family:var(--disp);font-size:20px;line-height:1.1;font-weight:800;opacity:.9}
-.commit .harvey{margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.28);font-size:12.5px;line-height:1.4;font-weight:500;opacity:.95}
+/* ---------- row 4: problems | solutions | Harvey ---------- */
+.problems{left:0;top:878px;bottom:0;width:360px;background:var(--panel);border-top:3px solid var(--navy);box-shadow:var(--shadow);padding:16px 20px 14px 24px;display:flex;flex-direction:column;justify-content:center}
+.problems h2{font-size:26px;line-height:1.05;color:var(--navy)}
+.problems ul{margin-top:12px;padding:0;list-style:none}
+.solutions{left:360px;right:297px;top:878px;bottom:0;background:#fff;border-top:3px solid var(--navy);box-shadow:var(--shadow);padding:16px 22px 14px 22px;display:flex;flex-direction:column;justify-content:center}
+.sol-head{display:flex;align-items:baseline;gap:14px;flex:none}
+.sol-head h2{font-size:26px;line-height:1;color:var(--navy)}
+.sol-head p{font-size:13.5px;line-height:1.3;color:var(--ink2)}
+.sols{display:grid;grid-template-columns:1fr 1fr 1fr;column-gap:16px;margin-top:12px}
+.sols h3{font-size:20px;line-height:1;color:var(--navy)}
+.sols ul,.problems ul{margin-top:8px;padding:0;list-style:none}
+.problems ul{margin-top:12px}
+.sols li,.problems li{position:relative;padding-left:14px;margin-top:6px;font-size:13.5px;line-height:1.3;color:var(--ink)}
+.sols li:first-child,.problems li:first-child{margin-top:0}
+.sols li:before,.problems li:before{content:"";position:absolute;left:0;top:.55em;width:6px;height:1.5px;background:var(--blue)}
+.close{left:1290px;right:0;top:878px;bottom:0;color:#fff;padding:18px 22px;display:flex;flex-direction:column;justify-content:center;gap:12px;background:var(--blue)}
+.close .close-ico{width:28px;height:28px}
+.close p{font-size:15px;line-height:1.4;font-weight:600}
 
 .hint{position:fixed;right:12px;bottom:10px;font:12px/1.3 var(--body);color:#5b6370;background:#fff;padding:6px 10px;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.12)}
-body.export .hint{display:none}
 @page{size:420mm 297mm;margin:0}
 @media print{
   html,body{background:none;width:420mm;height:297mm;overflow:hidden}
@@ -120,174 +129,215 @@ body.export .hint{display:none}
 <body>
 <div class="wrap"><div class="poster" id="poster">
 
+<!-- TITLE -->
 <div class="abs tb">
   <h1 class="title"><span class="ln" data-fit="title">Towards</span><span class="ln" data-fit="title">Water-Sensitive</span><span class="ln" data-fit="title">Cities</span></h1>
-  <p class="thesis">Delhi ran dry and flooded in June 2024. One water system made both, and decided who paid.</p>
-  <p class="intro">Three cities, one question: when the system fails, who carries the risk? Read through technocratic, bureaucratic and political ecology registers.</p>
+  <div class="subt" data-fit>in the age of the Anthropocene</div>
+  <p class="intro"><b>Delhi ran dry, then flooded, in the same month of 2024.</b> Bengaluru sold the lakes that used to hold its rain. Zhengzhou’s sponge city met a storm it was not built for. The pattern is land, budgets and who is left in the water.</p>
 </div>
 
+<!-- HERO: dual Delhi contrast -->
 <div class="abs hero">
   <div class="shot">
-    <div class="frame"><img src="poster-assets/pexels_water_truck_mumbai.jpg" alt="Water tanker truck on an Indian city street"></div>
-    <p class="cap">Water tanker on an Indian city street</p>
+    <img src="poster-assets/pexels_water_truck_mumbai.jpg" alt="Urban water supply truck on an Indian city street">
+    <div class="sticker"><b>Early June 2024</b><span>Tanker queues in a heatwave</span></div>
   </div>
   <div class="shot">
-    <div class="frame"><img src="poster-assets/pexels_kolkata_flood.jpg" alt="Flooded urban street after monsoon rain"></div>
-    <p class="cap">Monsoon flooding on an Indian city street</p>
+    <img src="poster-assets/pexels_kolkata_flood.jpg" alt="Flooded urban street after monsoon rain">
+    <div class="sticker"><b>28 June 2024</b><span>228 mm of rain in 24 hours</span></div>
   </div>
 </div>
 
+<!-- WHAT IS A WSC -->
 <div class="abs wsc">
-  <h2 data-fit>What is a water-sensitive city?</h2>
-  <p class="def">A city that manages rain, rivers, groundwater and wastewater as one cycle, storing rain where it falls instead of draining it away.</p>
-  <p class="arg">Pipes and parks only work when institutions, access and maintenance change with them.</p>
+  <h2 data-fit>Why these three cities</h2>
+  <p>A water-sensitive city keeps rain, rivers, groundwater and waste in one cycle. Most cities stop earlier. These three show the cost.</p>
+  <div class="stages">
+    <div><span class="well"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="5.5" height="2.2" rx="1" fill="#0E2238"/><rect x="9" y="4.5" width="1.5" height="3" fill="#0E2238"/><rect x="2" y="7" width="13" height="4.6" rx="1.2" fill="#0A5BE0"/><path fill="#0A5BE0" d="M13 7h3.6a3 3 0 0 1 3 3v2.6h-4.6v-1H13z"/><path fill="#8DB8FF" d="M17.3 15.2c-1 1.4-1.9 2.5-1.9 3.5a1.9 1.9 0 0 0 3.8 0c0-1-.9-2.1-1.9-3.5z"/></svg></span>Water supply city</div>
+    <div><span class="well sq"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="8" width="21" height="8" rx="2" fill="#0A5BE0"/><rect x="6.5" y="6.3" width="2.6" height="11.4" rx=".8" fill="#0E2238"/><rect x="14.9" y="6.3" width="2.6" height="11.4" rx=".8" fill="#0E2238"/><rect x="10.6" y="10.8" width="2.8" height="2.4" rx="1.2" fill="#8DB8FF"/></svg></span>Sewered city</div>
+    <div><span class="well sq"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><g fill="#8DB8FF"><circle cx="8" cy="10" r="4"/><circle cx="13.2" cy="8" r="5"/><circle cx="17.5" cy="11" r="3.6"/><rect x="4" y="10" width="17" height="4.6" rx="2.3"/></g><g fill="#0A5BE0"><rect x="7" y="16.6" width="1.7" height="4.4" rx=".85"/><rect x="11.6" y="16.6" width="1.7" height="4.4" rx=".85"/><rect x="16.2" y="16.6" width="1.7" height="4.4" rx=".85"/></g></svg></span>Drained city</div>
+    <div><span class="well teal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="#0A5BE0" d="M10 3c-3.2 4.1-5.8 7.3-5.8 10.7a5.8 5.8 0 0 0 11.6 0C15.8 10.3 13.2 7.1 10 3z"/><path fill="#14A38B" d="M13.5 21c0-4.4 2.8-7.3 7.5-7.6-.3 4.6-3.2 7.6-7.5 7.6z"/></svg></span>Water&#8209;sensitive city</div>
+  </div>
+  <p class="arg">Bengaluru, Delhi and Zhengzhou are still stuck between drains and a real water cycle.</p>
 </div>
 
+<!-- THREE REGISTERS -->
 <div class="abs forces">
-  <div class="forces-copy">
-    <h2 data-fit>Urban water systems are shaped in three registers</h2>
-    <p class="lead">Cause, decision and risk map onto these registers. Buried pipes can hide who was never connected.</p>
+  <div class="forces-head">
+    <h2>How an urban water system fails</h2>
+    <p class="lead">A pipe, a budget and a claim on land are one system.</p>
   </div>
-  <div class="fzrow">
-    <div class="rail" aria-hidden="true"></div>
-    <div class="fz fz-tech">
-      <b>Technocratic</b>
-      <span>How water moves, and what pipes are built to do</span>
-    </div>
-    <div class="fz fz-bur">
-      <b>Bureaucratic</b>
-      <span>Who decides, funds and maintains</span>
-    </div>
-    <div class="fz fz-pol">
-      <b>Political ecology</b>
-      <span>Who benefits, bears risk and is heard</span>
-    </div>
-  </div>
-  <div class="core">
-    <svg class="core-ico" viewBox="0 0 24 24" aria-hidden="true"><g fill="#fff"><rect x="2.5" y="11" width="5.5" height="10.5" rx=".6"/><rect x="9" y="3.5" width="6" height="18" rx=".6"/><rect x="16" y="8.5" width="5.5" height="13" rx=".6"/></g><g fill="#0A5BE0"><rect x="10.6" y="6" width="1.1" height="1.6"/><rect x="12.4" y="6" width="1.1" height="1.6"/><rect x="10.6" y="9.4" width="1.1" height="1.6"/><rect x="12.4" y="9.4" width="1.1" height="1.6"/><rect x="10.6" y="12.8" width="1.1" height="1.6"/><rect x="12.4" y="12.8" width="1.1" height="1.6"/><rect x="4" y="13.5" width="2.5" height="1.4"/><rect x="4" y="16.4" width="2.5" height="1.4"/><rect x="17.5" y="11" width="2.5" height="1.4"/><rect x="17.5" y="14" width="2.5" height="1.4"/></g></svg>
-    <b>Urban water<br>system</b>
+  <div class="pillars">
+    <section class="pillar">
+      <h3>Technocratic</h3>
+      <p class="def">How water is moved, stored and drained.</p>
+      <ul>
+        <li>A drain or a tanker can hide a broken lake.</li>
+        <li>Lakes, sewers and groundwater are planned apart.</li>
+        <li>Zhengzhou took 201.9 mm in one hour.</li>
+      </ul>
+    </section>
+    <section class="pillar">
+      <h3>Bureaucratic</h3>
+      <p class="def">Who is responsible, who funds and who maintains.</p>
+      <ul>
+        <li>Delhi’s water policy has waited since 2011.</li>
+        <li>No one office can halt a metro and clear a drain.</li>
+        <li>Sponge money went to landscaping, not drains.</li>
+      </ul>
+    </section>
+    <section class="pillar">
+      <h3>Political ecology</h3>
+      <p class="def">Who gets the water, who is exposed, and who is heard.</p>
+      <ul>
+        <li>Shortage and flood are blamed on the people in them.</li>
+        <li>Tankers and borewells sit outside the plan.</li>
+        <li>Deaths and losses can go uncounted.</li>
+      </ul>
+    </section>
   </div>
 </div>
 
-<h2 class="abs sec">Same system, three ways risk is carried</h2>
+<!-- CASES -->
+<h2 class="abs sec">Three cities, three water failures</h2>
 
 <div class="abs case" style="left:20px">
   <div class="hd">
-    <h3>Bengaluru</h3>
-    <div class="tag">When development breaks the lake system</div>
-    <span class="region">Karnataka, India</span>
+    <div><h3>Bengaluru</h3><div class="tag">When development breaks the lake system</div></div>
+    <span class="loc"><svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path fill="#E5534B" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></svg>Karnataka, India</span>
   </div>
-  <div class="ph">
-    <div class="frame"><img src="poster-assets/pexels_kolkata_taxi.jpg" alt="Yellow taxi driving through a flooded Indian city street"></div>
-    <p class="cap">Flooded street with traffic during heavy rain (illustrative)</p>
-  </div>
-  <div class="kpis">
-    <div class="kpi"><div class="kl">Drought</div><div class="kv">6,900 / 14,000 borewells dry · March 2024</div></div>
-    <div class="kpi"><div class="kl">Flood</div><div class="kv">Sept 2022 · Outer Ring Road</div></div>
+  <div class="body">
+    <div class="frame"><img src="poster-assets/pexels_scooter_rain.jpg" alt="Person navigating a flooded Indian city street in heavy rain"></div>
+    <div class="stat">
+      <div class="num">6,900<small>/ 14,000</small></div>
+      <div class="cap">borewells dry · March 2024</div>
+      <div class="sub">207 to 93 <span>water bodies, 1973–2010</span></div>
+    </div>
   </div>
   <div class="cols">
-    <div><h4>Technical cause</h4><ul>
-      <li>Linked lakes (keres) disconnected</li>
-      <li>Aquifers over-pumped citywide</li>
+    <div><h4>Technical</h4><ul>
+      <li>Linked lakes cut apart</li>
+      <li>Aquifers over-pumped</li>
+      <li>Outer Ring Road flooded, 2022</li>
+      <li>Channels filled for new plots</li>
     </ul></div>
-    <div><h4>What decided it</h4><ul>
+    <div><h4>Political and social</h4><ul>
       <li>Wetlands sold after the IT boom</li>
       <li>Evictions hit settlers, not campuses</li>
-    </ul></div>
-    <div><h4>Who carried the risk</h4><ul>
-      <li>Settlers on filled channels</li>
-      <li>Periphery depends on tankers</li>
+      <li>The periphery runs on tankers</li>
+      <li>Flood blame put on settlers</li>
     </ul></div>
   </div>
-  <p class="reading"><b>Ranganathan:</b> flood risk is produced, and encroachment rules fall harder on some people.</p>
 </div>
 
 <div class="abs case" style="left:541px">
   <div class="hd">
-    <h3>Delhi</h3>
-    <div class="tag">One month, two water crises</div>
-    <span class="region">NCT, India</span>
+    <div><h3>Delhi</h3><div class="tag">One month, two water crises</div></div>
+    <span class="loc"><svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path fill="#E5534B" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></svg>NCT, India</span>
   </div>
-  <div class="ph">
+  <div class="body">
     <div class="frame"><img src="poster-assets/pexels_flood_rickshaw.jpg" alt="Rickshaws and pedestrians on a flooded city street"></div>
-    <p class="cap">Flooded street with rickshaws after heavy rain</p>
-  </div>
-  <div class="kpis">
-    <div class="kpi"><div class="kl">Drought</div><div class="kv">Early June 2024 · ~90% raw water imported</div></div>
-    <div class="kpi"><div class="kl">Flood</div><div class="kv">228 mm in 24h · 28 June; July basement deaths</div></div>
+    <div class="stat">
+      <div class="num">228<i>mm</i></div>
+      <div class="cap">of rain in 24 hours · 28 June 2024</div>
+      <div class="sub">~90% <span>of raw water is imported</span></div>
+    </div>
   </div>
   <div class="cols">
-    <div><h4>Technical cause</h4><ul>
-      <li>Most raw water comes from other states</li>
-      <li>Drains are covered and clogged</li>
+    <div><h4>Technical</h4><ul>
+      <li>Most raw water is imported</li>
+      <li>Large losses in the network</li>
+      <li>Covered, clogged drains</li>
+      <li>Floodplain built over</li>
     </ul></div>
-    <div><h4>What decided it</h4><ul>
-      <li>Supply contested across state lines</li>
+    <div><h4>Political and social</h4><ul>
+      <li>Supply fought across state lines</li>
       <li>Water moves by political pressure</li>
-    </ul></div>
-    <div><h4>Who carried the risk</h4><ul>
-      <li>Poorer zones and unauthorised colonies</li>
-      <li>Basements carried the deadliest risk</li>
+      <li>Three deaths in a basement library</li>
+      <li>Poorer zones wait longer</li>
     </ul></div>
   </div>
-  <p class="reading"><b>Angelo &amp; Anand:</b> Delhi's water crisis is made beyond its boundary; pressure decides where water moves.</p>
 </div>
 
 <div class="abs case" style="left:1062px">
   <div class="hd">
-    <h3>Zhengzhou</h3>
-    <div class="tag">When sponge design meets extreme rain</div>
-    <span class="region">Henan, China</span>
+    <div><h3>Zhengzhou</h3><div class="tag">When sponge design meets extreme rain</div></div>
+    <span class="loc"><svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path fill="#E5534B" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></svg>Henan, China</span>
   </div>
-  <div class="ph">
-    <div class="frame"><img src="poster-assets/zhengzhou_street.jpg" alt="Damaged utility boxes and debris on a Zhengzhou street after the July 2021 floods"></div>
-    <p class="cap">Zhengzhou street after the July 2021 floods</p>
-  </div>
-  <div class="kpis">
-    <div class="kpi"><div class="kl">Rain</div><div class="kv">201.9 mm in one hour · 20 July 2021</div></div>
-    <div class="kpi"><div class="kl">Deaths</div><div class="kv death">380 dead or missing</div></div>
+  <div class="body">
+    <div class="frame"><img src="poster-assets/zhengzhou_flood2.jpg" alt="Flooded street scene in Zhengzhou during the July 2021 Henan floods"></div>
+    <div class="stat">
+      <div class="num">201.9<i>mm</i></div>
+      <div class="cap">of rain in one hour · 20 July 2021</div>
+      <div class="sub">380 <span>dead or missing</span></div>
+    </div>
   </div>
   <div class="cols">
-    <div><h4>Technical cause</h4><ul>
-      <li>Sponge measures weaken as storms intensify</li>
-      <li>No safe overflow route for metro or tunnels</li>
+    <div><h4>Technical</h4><ul>
+      <li>Sponge not built for this storm</li>
+      <li>Days of rain near a year’s total</li>
+      <li>No safe overflow for the metro</li>
+      <li>Greenery counted as drainage</li>
     </ul></div>
-    <div><h4>What decided it</h4><ul>
-      <li>Warnings ignored; deaths concealed</li>
-      <li>Sponge budgets went to landscaping</li>
-    </ul></div>
-    <div><h4>Who carried the risk</h4><ul>
-      <li>Metro and tunnel users</li>
-      <li>Residents sold a climate-hero story</li>
+    <div><h4>Political and social</h4><ul>
+      <li>Warnings were missed</li>
+      <li>Budget went to landscaping</li>
+      <li>Deaths under-reported at first</li>
+      <li>Sold as a climate success</li>
     </ul></div>
   </div>
-  <p class="reading"><b>Kaika &amp; Swyngedouw:</b> visible greenery counted for more than the pipes beneath it.</p>
 </div>
 
-<div class="abs band cmp">
-  <h2>Comparing the cities</h2>
-  <table>
-    <tr><th></th><th>Technical cause</th><th>What decided it</th><th class="risk">Who carried the risk</th></tr>
-    <tr><td>Bengaluru</td><td>Lake cascade broken; aquifers over-pumped</td><td>Land markets and selective enforcement</td><td class="risk">Settlers on filled channels; tanker-fed periphery</td></tr>
-    <tr><td>Delhi</td><td>Imported water and blocked drains</td><td>Split authority and the tanker economy</td><td class="risk">Unauthorised colonies; basement deaths</td></tr>
-    <tr><td>Zhengzhou</td><td>Rain far beyond sponge design limits</td><td>Spending priorities and ignored warnings</td><td class="risk">Metro and tunnel users; sold a climate-hero story</td></tr>
-  </table>
+<!-- COMMON PROBLEMS | SOLUTIONS | HARVEY -->
+<div class="abs problems">
+  <h2>Common problems</h2>
+  <ul>
+    <li>Lakes, drains and sponge parks are built for a milder rain than the city now gets.</li>
+    <li>Upkeep, warnings and a water policy sit with offices that do not act together.</li>
+    <li>Flood and shortage fall on settlers, basement users and people left uncounted.</li>
+  </ul>
 </div>
-<div class="abs band commit">
-  <h2>What a just water-sensitive city must do</h2>
-  <ol>
-    <li><span class="n">1</span><span>Plan by watershed, not by plot</span></li>
-    <li><span class="n">2</span><span>Count informal systems as infrastructure</span></li>
-    <li><span class="n">3</span><span>Enforce rules equally; secure tenure first</span></li>
-  </ol>
-  <p class="harvey">Harvey (2008): the right to the city includes the power to change how water is governed: where it goes, who decides and whom it reaches.</p>
+<div class="abs solutions">
+  <div class="sol-head">
+    <h2>Solutions</h2>
+    <p>Pipes, offices, and who the water reaches.</p>
+  </div>
+  <div class="sols">
+    <section>
+      <h3>Technocratic</h3>
+      <ul>
+        <li>Reconnect the lakes so rain has a path downhill and floodplains can soak.</li>
+        <li>Meter each district and find leaks before promising a new supply.</li>
+        <li>Keep green streets, and add drains that still empty in an extreme storm.</li>
+      </ul>
+    </section>
+    <section>
+      <h3>Bureaucratic</h3>
+      <ul>
+        <li>Put lakes, drains and sewage under one authority, and fund the upkeep.</li>
+        <li>Pass the water policy waiting since 2011, and name who carries it out.</li>
+        <li>A red alert should stop the metro before people are underground.</li>
+      </ul>
+    </section>
+    <section>
+      <h3>Political ecology</h3>
+      <ul>
+        <li>Secure tenure before clearance, and enforce the rule on the powerful too.</li>
+        <li>Count tankers and borewells as supply, and even it out across zones.</li>
+        <li>Publish deaths, shortages and flood maps while the event is still news.</li>
+      </ul>
+    </section>
+  </div>
+</div>
+<div class="abs close">
+  <svg class="close-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 2.5c-3.6 4.6-6.5 8.2-6.5 12a6.5 6.5 0 0 0 13 0c0-3.8-2.9-7.4-6.5-12z"/></svg>
+  <p>Harvey's right to the city includes the power to change how water is governed: where it goes, who decides and whom it reaches.</p>
 </div>
 
 </div></div>
 <div class="hint">Ctrl/Cmd + P → A3 landscape, margins none, background graphics on</div>
 <script>
 (function(){
-  if(/[?&]export=1(?:&|$)/.test(location.search))document.body.classList.add('export');
   var p=document.getElementById('poster');
   function fit(){var s=Math.min(1,(window.innerWidth-32)/1587);p.style.transform='scale('+s+')';p.parentNode.style.height=(1123*s+48)+'px'}
   window.addEventListener('resize',fit);fit();
